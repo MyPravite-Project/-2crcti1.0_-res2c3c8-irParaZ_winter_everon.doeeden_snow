@@ -44,4 +44,4 @@ _info = format["Don`t cry just play or disconnect\n\nGame Style:\n%9\nTime Left:
 
 ;titleText [_info, "PLAIN DOWN", 2]
 hint _info
-
+playMusic "blip_jingle1"

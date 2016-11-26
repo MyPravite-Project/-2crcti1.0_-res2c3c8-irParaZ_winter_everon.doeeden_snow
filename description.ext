@@ -4100,3 +4100,12 @@ class CfgRadio
 			title = "WARNING! Incoming Missile!";
 	};
 };
+
+class CfgMusic
+{             
+	class blip_jingle1
+	{
+                        sound[]={"\music\Jingle1.ogg",db+10, 1.0};
+                        name = "blip_jingle1";
+	};
+};
