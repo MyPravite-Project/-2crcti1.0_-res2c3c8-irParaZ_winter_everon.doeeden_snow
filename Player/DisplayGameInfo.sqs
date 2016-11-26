@@ -1,0 +1,47 @@
+; args : none
+
+
+_textSP = ["Random", "Fix", localize "STR_0_START_0", localize "STR_0_START_1"] select fixedStartPos
+? timeLimit == 0 : _textTimeLimit = "None"
+? timeLimit > 0 : _textTimeLimit = format["%1 hours", timeLimit/(60*60)]
+_textPricingMode = ["Normal", "Doubled"] select PricingMode
+;? single == 1 : _textbases = "Single"
+;? single == 0 : _textbases = "Multi"
+_timeleft = (timelimit/60) -(time/60)
+_timel = _timeleft %1
+_timeleft = format["%1 min", _timeleft - _timel]
+
+? (param1 == 1):_textIncome = "V.LOW RESISTANCE"
+? (param1 == 2):_textIncome = "V.LOW RESISTANCE"
+? (param1 == 3):_textIncome = "LOW RESISTANCE"
+? (param1 == 4):_textIncome = "LOW RESISTANCE"
+? (param1 == 5):_textIncome = "MEDIUM RESISTANNCE"
+? (param1 == 6):_textIncome = "MEDIUM RESISTANNCE"
+? (param1 == 7):_textIncome = "HEAVY RESISTANCE"
+? (param1 == 8):_textIncome = "HEAVY RESISTANCE"
+? (param1 == 9):_textIncome = "DOOM"
+? (param1 == 10):_textIncome = "V.LOW RESISTANCE"
+? (param1 == 11):_textIncome = "LOW RESISTANCE"
+? (param1 == 12):_textIncome = "MEDIUM RESISTANNCE"
+? (param1 == 13):_textIncome = "HEAVY RESISTANCE"
+? (param1 == 14):_textIncome = "LOW RESISTANCE"
+? (param1 == 15):_textIncome = "LOW RESISTANCE"
+
+
+~2
+
+_siEnemy = siEnemy select siPlayer
+_group = (groupMatrix select _siEnemy) select 0
+_textEnemyCo = [name leader _group,"AI"] select (_group in (groupAiMatrix select _siEnemy))
+
+_group = (groupMatrix select siPlayer) select 0
+_textCo = [name leader _group,"AI"] select (_group in (groupAiMatrix select siPlayer))
+
+_info = format["Don`t cry just play or disconnect\n\nGame Style:\n%9\nTime Left: %1\n\nGroup size: %2\n\nView distance: %3\nTime Limit: %5\n\nGame Mode: %6\n\nOur Commander is:\n%7\n\nEnemy Commander is:\n%8\n\nMission:\n%4", _timeleft, maxGroupSize, viewDistance, localize "STR_MISSION_NAME", _textTimeLimit,  localize "STR_CRCTI_MOD", _textCo,_textEnemyCo, _textIncome]
+
+
+;_info = format["GOOD LUCK ALL \nStart positions  %1\nGroup size  %2\nView distance  %3\n%4", _textSP, maxGroupSize, viewDistance, localize "STR_MISSION_NAME"]
+
+;titleText [_info, "PLAIN DOWN", 2]
+hint _info
+

@@ -1,0 +1,128 @@
+; args: [unit, si]
+
+_unit = _this select 0
+_si = _this select 1
+
+
+
+rand = random 10 
+num = rand - (rand mod 1)
+
+? num == 1: goto "weapon0"
+? num == 2: goto "weapon1"
+? num == 3: goto "weapon2"
+? num == 4: goto "weapon3"
+? num == 5: goto "weapon4"
+? num == 6: goto "weapon5"
+? num == 7: goto "weapon6"
+? num == 8: goto "weapon7"
+? num == 9: goto "weapon8"
+
+#weapon0
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "JahSG551mag" } forEach [1,2,3,4]
+  { _unit addMagazine "CarlGustavLauncher" } forEach [1]
+ _unit addWeapon "JahSG551"
+ _unit addWeapon "CarlGustavLauncher"
+  exit
+
+#weapon1
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "JahSG551mag" } forEach [1,2,3,4]
+  { _unit addMagazine "LAWLauncher" } forEach [1]
+ _unit addWeapon "JahSG551"
+ _unit addWeapon "LAWLauncher"
+  exit
+
+#weapon2
+
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "RFSVUAmag" } forEach [1,2,3,4]
+  { _unit addMagazine "AT4Launcher" } forEach [1]
+ _unit addWeapon "RFSVUa"
+ _unit addWeapon "AT4Launcher"
+  exit
+
+
+
+#weapon3
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "G36aMag" } forEach [1,2,3,4]
+  { _unit addMagazine "AALauncher" } forEach [1]
+ _unit addWeapon "G36a"
+ _unit addWeapon "AALauncher"
+  exit
+
+#weapon4
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "KEGAK107Mag" } forEach [1,2,3,4]
+  { _unit addMagazine "9K32Launcher" } forEach [1]
+ _unit addWeapon "KEGAK107"
+ _unit addWeapon "9K32Launcher"
+  exit
+
+#weapon5
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "mVSSmag" } forEach [1,2,3,4]
+  { _unit addMagazine "RPGLauncher" } forEach [1]
+ _unit addWeapon "mVSS"
+ _unit addWeapon "RPGLauncher"
+  exit
+
+#weapon6
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "M21" } forEach [1,2,3,4]
+  { _unit addMagazine "LAWLauncher" } forEach [1]
+ _unit addWeapon "M21"
+ _unit addWeapon "LAWLauncher"
+  exit
+
+#weapon7
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "SVDDragunov" } forEach [1,2,3,4]
+  { _unit addMagazine "RPGLauncher" } forEach [1]
+ _unit addWeapon "SVDDragunov"
+ _unit addWeapon "RPGLauncher"
+  exit
+
+#weapon8
+
+
+removeAllWeapons _unit
+
+{ _unit addWeapon _x } forEach weaponsCustom
+  { _unit addMagazine "VNgroza1sMag" } forEach [1,2,3,4]
+  { _unit addMagazine "RPGLauncher" } forEach [1]
+ _unit addWeapon "VNgroza1sscope"
+ _unit addWeapon "RPGLauncher"
+  exit
